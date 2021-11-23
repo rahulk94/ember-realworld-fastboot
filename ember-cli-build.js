@@ -8,6 +8,7 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
+    storeConfigInMeta: false,
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -24,20 +25,20 @@ module.exports = function (defaults) {
   // along with the exports of each module as its value.
 
   return require('@embroider/compat').compatBuild(app, Webpack, {
-    staticAddonTestSupportTrees: true,
-    staticAddonTrees: true,
-    staticHelpers: true,
-    staticComponents: true,
-    packagerOptions: {
-      webpackConfig: {
-        resolve: {
-          alias: {
-            marked: path.resolve(__dirname, 'node_modules/marked/lib/marked.esm.js'),
-          },
-        },
-        plugins: [new BundleAnalyzerPlugin()],
-      },
-    },
-    splitAtRoutes: ['editor', 'settings', 'register', 'login', 'articles', 'profile'],
+    // staticAddonTestSupportTrees: true,
+    // staticAddonTrees: true,
+    // staticHelpers: true,
+    // staticComponents: true,
+    // packagerOptions: {
+    //   webpackConfig: {
+    //     resolve: {
+    //       alias: {
+    //         marked: path.resolve(__dirname, 'node_modules/marked/lib/marked.esm.js'),
+    //       },
+    //     },
+    //     plugins: [new BundleAnalyzerPlugin()],
+    //   },
+    // },
+    // splitAtRoutes: ['editor', 'settings', 'register', 'login', 'articles', 'profile'],
   });
 };
