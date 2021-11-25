@@ -33,10 +33,6 @@ module.exports = function (environment) {
       ],
     },
 
-    storefront: {
-      maxAge: 1, // shoebox expires 1 minutes after the fastboot server has rendered the page
-    },
-
     'ember-cli-mirage': {
       enabled: false,
     },
